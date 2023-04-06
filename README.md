@@ -5,8 +5,6 @@ Restaurant API with NodeJS Express and Typescript
 
 ## How to use it ?
 `````
-git clone ...
-cd altable
 npm install
 npm run start
 ```````
