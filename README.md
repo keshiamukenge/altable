@@ -7,6 +7,7 @@ Restaurant API with NodeJS Express and Typescript
 `````
 git clone ...
 cd altable
+npm install
 npm run start
 ```````
 
