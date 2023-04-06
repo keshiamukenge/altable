@@ -1,9 +1,10 @@
-type PlateInterface = {
-	id: number;
-	name: string;
-	description: string;
-	price: number;
-	quantity: number;
+interface PlateInterface {
+	id: number
+	name: string
+	description: string
+	type: 'Apéritif' | 'Entrée' | 'Plat principal' | 'Dessert' | 'Boisson'
+	price: number
+	quantity: number
 }
 
 export default class CardController {
