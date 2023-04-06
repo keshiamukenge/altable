@@ -40,8 +40,12 @@ class App {
 			this.cardController.getCard(req, res);
 		})
 
-		this.app.put('/api/card', (req, res) => {
+		this.app.post('/api/card', (req, res) => {
 			this.cardController.addPlate(req, res);
+		})
+
+		this.app.put('/api/card', (req, res) => {
+			this.cardController.setCard(req, res);
 		})
 
 		this.app.get('/', (req, res) => {

@@ -29,4 +29,28 @@ export default class CardController {
 			res.send()
 		}
 	}
+
+	async setCard(req, res): Promise<void> {
+		const plateId = await req.body.id;
+		const modification = await req.body.edit;
+		const id = this.card.findIndex(item => item.id === plateId);
+
+		if (id === -1) {
+			res.status(400)
+			res.send()
+		} else {
+			const plate = this.card[id];
+			plate.quantity += modification;
+
+			if(plate.quantity >= 0) {
+				res.status(204);
+				res.send()
+			} else {
+				const idToRemove = this.card.indexOf(plate);
+				this.card.splice(idToRemove, 1);
+				res.status(204);
+				res.send()
+			}
+		}
+	}
 }
