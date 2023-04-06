@@ -14,6 +14,7 @@ export default class CardController {
 	}
 
 	async getCard(req, res): Promise<void> {
+		res.status(200);
 		res.send(this.card);
 	}
 
@@ -52,5 +53,11 @@ export default class CardController {
 				res.send()
 			}
 		}
+	}
+
+	async getAvailablePlates(req, res): Promise<void> {
+		const availablePlates = this.card.filter(plate => plate.quantity > 0);
+		res.status(200);
+		res.send(availablePlates);
 	}
 }

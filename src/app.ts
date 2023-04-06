@@ -31,7 +31,9 @@ class App {
 				<h2>Endpoints :</h2>
 				<ul>
 					<li><code>[GET] /card</code></li>
+					<li><code>[POST] /card</code></li>
 					<li><code>[PUT] /card</code></li>
+					<li><code>[GET] /card/available</code></li>
 				</ul>
 			`)
 		})
@@ -50,6 +52,10 @@ class App {
 
 		this.app.get('/', (req, res) => {
 			res.send('Bienvenue sur Alt\'able !')
+		})
+
+		this.app.get('/api/card/available', (req, res) => {
+			this.cardController.getAvailablePlates(req, res);
 		})
 	}
 
